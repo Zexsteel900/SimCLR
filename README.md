@@ -66,4 +66,38 @@ Self-supervised learning significantly outperforms supervised learning when labe
 
 ---
 
-## Project Structure
+
+---
+
+## Installation
+
+```bash
+pip install -r requirements.txt
+```
+
+## Usage
+1. Pretraining (Self Supervised)
+```bash
+python pretrain.py
+```
+2. Baseline Training 
+```bash
+python baseline.py
+```
+3. Linear Probe
+```bash
+python linear_probe.py
+```
+4. Fine Tuning
+```bash
+python finetune.py
+```
+5. Inference
+```bash
+python inference.py
+```
+6. Streamlit Demo
+```bash
+streamlit run app.py
+```
+
