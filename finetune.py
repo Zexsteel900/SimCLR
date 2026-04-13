@@ -17,7 +17,7 @@ def main():
 
     full_model = nn.Sequential(model.encoder, classifier).to(device)
 
-    train_loader, test_loader = get_eurosat_finetune(label_fraction=0.05)
+    train_loader, test_loader = get_eurosat_finetune(label_fraction=0.10)
 
     criterion = nn.CrossEntropyLoss()
     optimizer = optim.Adam(full_model.parameters(), lr=1e-4)
@@ -56,7 +56,8 @@ def main():
             total += labels.size(0)
 
     print(f"Fine-tuning Accuracy: {100 * correct / total:.2f}%")
-
+    torch.save(full_model.state_dict(), "checkpoints/final_model.pth")
+    print("Model saved successfully")
 
 if __name__ == "__main__":
     main()
